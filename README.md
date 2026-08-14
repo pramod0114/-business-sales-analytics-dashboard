@@ -1,142 +1,297 @@
-# Business Sales & Performance Analytics Dashboard
-> **Enterprise-Grade End-to-End Data Analytics Portfolio Project**
-> *Demonstrating advanced competency in Excel, Power BI, Tableau, Data Cleaning (ETL), Star Schema Data Modeling, DAX/LOD Measures, KPI Analytics, and Executive Storytelling.*
+# Vantage Analytics — Enterprise Sales & Performance Intelligence Suite
+> **Designed & Developed by:** **Pramod Mahajan** (*Lead BI & Analytics Developer*)  
+> **Platform & Domain:** Enterprise Commercial Intelligence, Power BI & Tableau Analytics, Star Schema Modeling, DAX / LOD Metric Formulation, ETL Data Cleansing Pipeline, and Executive Decision Support.
 
 ---
 
 ## 📌 Executive Summary & Business Objective
 
-This project delivers a comprehensive, interactive **Sales & Performance Analytics Suite** designed for C-suite and commercial leadership of a multi-regional retail and technology enterprise. Analyzing over **10,250 transactions ($2.7M+ revenue)** across 3 fiscal years (2023–2025), this dashboard identifies revenue drivers, margin leakage points, discount elasticity, customer demographic value, and carrier fulfillment bottlenecks.
+**Vantage Analytics** is an enterprise-grade, end-to-end commercial business intelligence suite engineered to provide C-suite executives, VP of Sales, and Supply Chain directors with real-time operational visibility, margin governance, and predictive growth telemetry.
 
-### Core Business Questions Solved:
-1. **Revenue vs. Profit Health:** Why did top-line sales expand by +19.4% while net gross margin contracted in specific sub-categories?
-2. **Discount Elasticity & Bleeders:** At what exact discount threshold does profitability turn negative? ($142K preserved via discount governance).
-3. **Geospatial & Category Clustering:** Which regional territories and product lines yield the highest customer lifetime value (CLV)?
-4. **Fulfillment Bottlenecks:** How are shipping delays and carrier turnaround times impacting customer satisfaction (CSAT) and order cancellation rates?
+Analyzing **10,250+ enterprise transactions ($2.7M+ in gross revenue)** across 3 fiscal years (2023–2025) and 4 major geographical territories (West, East, Central, South), this platform resolves critical commercial visibility blind spots:
+
+1. **Revenue vs. Margin Decoupling:** Identifies why top-line revenue expanded by **+19.4% YoY** while net gross margins experienced compression in specific sub-categories.
+2. **Discount Elasticity & Margin Leakage:** Quantifies the exact discount thresholds where transactions turn unprofitable, identifying **$142,000+** in recoverable gross profit through automated discount caps.
+3. **Customer Cohort Value & CSAT:** Identifies high-value corporate accounts, evaluates repeat purchase intervals, and correlates shipping lead times with customer satisfaction ratings.
+4. **Logistics & Carrier SLA Auditing:** Pinpoints regional delivery delay bottlenecks across 4 fulfillment carriers (Standard Class, Second Class, First Class, Same Day).
 
 ---
 
-## 🛠️ Tech Stack & Methodologies
+## 👨‍💻 Developer Profile
 
-| Layer | Technologies & Techniques |
+| Attribute | Details |
 | :--- | :--- |
-| **Data Ingestion & ETL** | Power Query, SQL, Python (Pandas), Data Deduplication, Imputation, Text Normalization, Outlier Bounding |
-| **Data Modeling** | Relational Star Schema (1 Fact Table, 4 Dimension Tables), 1-to-Many Cardinality, Surrogate Keys |
-| **Calculations & Analytics** | 25+ DAX Measures (Time Intelligence, YoY, YTD, SAMEPERIODLASTYEAR), Tableau LOD Expressions |
-| **Visualization & UX** | Power BI Matrix, Tableau Interactive Maps, Recharts, Tailwind CSS, Drill-Downs (Year $\to$ Quarter $\to$ Month $\to$ Day) |
-| **Delivery Formats** | Dynamic Web Application, CSV Dataset Exports (Raw & Cleaned), Portfolio Hub |
+| **Developer** | **Pramod Mahajan** |
+| **Role** | Lead BI & Analytics Developer / Data Architect |
+| **Specialization** | Enterprise Power BI / Tableau Architectures, DAX Modeling, ETL Pipelines, SQL & Python Analytics |
+| **Project Type** | Production-Ready Full-Stack BI Web Application & Data Storytelling Portfolio |
+| **Data Scale** | 10,250+ Transactions, 793 Unique Customers, 1,850+ SKUs, 4 US Geographical Zones |
 
 ---
 
-## 📊 Dataset Architecture & Data Cleaning Log
+## 🛠️ Complete Technology Stack & Architecture
 
-The dataset contains **10,250+ enterprise sales transactions** spanning 2023–2025 across 20 US states and 50+ metropolitan areas.
+```
+┌───────────────────────────────────────────────────────────────────────────────────────┐
+│                                 VANTAGE ANALYTICS ARCHITECTURE                        │
+├───────────────────────────────────────────────────────────────────────────────────────┤
+│  [ UI & Presentation ]    Tailwind CSS v4 • Responsive Dark/Light Layout • Lucide UI   │
+│  [ Visualizations ]       Recharts Data Visualizations • Dynamic Drill-Down Canvases  │
+│  [ Client State & Engine] React 18+ • Context API • Real-Time Slicer Cross-Filtering  │
+│  [ Calculation Layer ]    25+ Enterprise DAX Formulas • Time-Intelligence Engine      │
+│  [ Relational Model ]     Kimball Star Schema (1 Fact Table + 4 Dimension Tables)     │
+│  [ ETL Pipeline ]         6-Step Automated Cleaning, Deduplication & Imputation Engine│
+│  [ Build & Tooling ]      TypeScript • Vite • Node.js                                 │
+└───────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-### ETL & Data Cleaning Pipeline (6 Core Steps):
-1. **Deduplication:** Isolated composite primary key `[Order_ID] + [Product_ID]` and eliminated 120 duplicate records caused by POS batch synchronization errors.
-2. **Missing Value Imputation:** Imputed 150 null customer age records using segment medians (*Consumer: 32, Corporate: 41, Home Office: 38*); resolved 85 missing postal codes via state-city geographic lookup.
-3. **Text Normalization & Trimming:** Standardized inconsistent casing in customer names (`"john doe"` $\to$ `"John Doe"`) and cleaned whitespace irregularities across 1,450 text fields.
-4. **Date Standardization & Dimension Generation:** Converted non-standard string dates to ISO-8601 (`YYYY-MM-DD`); derived Year, Quarter, Month, Day of Week, and Fiscal Week attributes.
-5. **Discount Bounding & Outlier Capping:** Replaced erroneous negative discount values (`-0.05`) with 0.00 and validated outlier promotional transactions.
-6. **Financial Feature Engineering:** Engineered derived metrics including **Profit Margin %**, **Cost Basis ($)**, **Shipping Days SLA**, and **Average Selling Price (ASP)**.
+| Layer | Tools & Methodologies |
+| :--- | :--- |
+| **Frontend UI / UX** | React 18 (TypeScript), Vite, Tailwind CSS, Lucide React, Glassmorphism-neutral dark styling |
+| **Data Visualizations** | Recharts (Bar Charts, Area/Line Charts, Scatter Plots, Heatbars, Radial gauges) |
+| **Data Modeling** | Ralph Kimball Star Schema Dimensional Modeling (1 Fact Table, 4 Dimension Tables) |
+| **Analytical Calculations** | 25+ DAX Measures (Time Intelligence, YoY %, YTD, SAMEPERIODLASTYEAR, Rolling Averages, Pareto/LOD) |
+| **Data Pipeline & ETL** | Power Query, SQL DML/DQL, Python Pandas, automated missing value imputation, deduplication |
+| **Export & Reporting** | Instant PDF Executive Summary Generator, Dynamic Filtered CSV Dataset Exporter |
+
+---
+
+## 🖥️ 10 Comprehensive Analytical Modules
+
+Vantage Analytics features 10 specialized interactive modules accessible via the sidebar navigation and top-level slicers:
+
+### 1. Executive Overview
+- **C-Suite KPI Cards:** Real-time metrics for **Total Revenue ($1.42M)**, **Gross Profit ($482.1K)**, **Profit Margin (33.9%)**, and **Average Order Value ($248.15)** with YoY growth and benchmark delta badges.
+- **Revenue & Forecast Trajectory:** Monthly actual sales trend with predictive run-rate forecast bars and peak season markers.
+- **Category Split & Automated Insight Engine:** Dynamic progress meters breaking down Technology, Furniture, and Office Supplies alongside automated strategic guidance.
+- **Top 5 Revenue Drivers & Margin Loss Makers:** Instant drillable table highlighting highest-grossing SKUs and loss-making items.
+
+### 2. Sales Performance & Hierarchical Drill-Down
+- **Time-Hierarchy Drill Path:** Interactive drill-down capabilities navigating from **Year $\to$ Quarter $\to$ Month $\to$ Day**.
+- **YoY & MoM Trajectory:** Compares current period performance against `SAMEPERIODLASTYEAR` benchmarks.
+- **Seasonal Order Velocity:** Analyzes weekly transaction spikes and promotional campaign uplifts.
+
+### 3. Profitability Matrix & Margin Leakage
+- **Sales vs. Profit Scatter Analysis:** Maps transaction volume against gross margin to identify profit bleeders and enterprise cash cows.
+- **Discount Elasticity Curve:** Visualizes profitability decay when discount rates exceed 20%, showing negative returns beyond 30%.
+- **High-Volume / Low-Margin Detection:** Flags high-frequency items generating negative net cash flow after shipping overhead.
+
+### 4. Customer Demographics & Segmentation
+- **Segment Breakdown:** Consumer (51.8%), Corporate (30.2%), and Home Office (18.0%) contribution matrices.
+- **Demographic Clustering:** Age group distributions and purchasing power indexes.
+- **VIP Account 360° Profiles:** Detailed modal cards for Top 10 Enterprise Accounts featuring Lifetime Value (CLV), purchase frequency, and CSAT scores.
+
+### 5. Product Portfolio & SKU Matrix
+- **Category & Sub-Category Heatmap:** Granular analysis of 17 distinct sub-categories.
+- **Average Selling Price (ASP) vs. Unit Volume:** Identifies elastic demand curves across hardware, office essentials, and furniture.
+- **Searchable SKU Table:** Real-time multi-attribute search and conditional formatting margin heat-bars.
+
+### 6. Geographical & Territory Analysis
+- **4-Region Geospatial Performance:** Western, Eastern, Central, and Southern regional sales split.
+- **State & Metro Market Rankings:** Top performing states (California, New York, Texas, Washington) vs. underserved rural markets.
+- **Regional Profit Margin Disparity:** Highlights regional logistics costs impacting Central and Southern profitability.
+
+### 7. Operational Logistics & Fulfillment SLAs
+- **Ship Mode Distribution:** Standard Class (59%), Second Class (20%), First Class (15%), Same Day (6%).
+- **Carrier On-Time SLA Delivery:** Quantifies transit turnaround days, identifying average delivery times of 3.8 days.
+- **Late Shipment & Bottleneck Audit:** Flags orders exceeding SLA thresholds and correlates delays with return rates.
+
+### 8. Target vs. Actual Quota Adherence
+- **Monthly Revenue Quota Variance:** Bullet charts and variance percentage tracking against corporate financial budgets.
+- **Regional Achievement Index:** Rates each commercial territory as *Exceeded*, *Achieved*, or *Underperforming*.
+
+### 9. Data Quality Hub & 6-Step ETL Pipeline
+- **Pipeline Health Dashboard:** Tracks **99.8% Data Quality Score**, 0 null records, 0 duplicate keys, and 100% ISO-8601 date adherence.
+- **Interactive ETL Step Inspector:** Audit log documenting deduplication, imputation, casing normalization, and outlier bounding.
+- **Raw vs. Cleaned Dataset Inspector:** Toggleable real-time data table comparing raw anomalies with cleaned records.
+
+### 10. Portfolio Hub, Resume Bullet Points & Executive Pitch
+- **Resume-Ready Bullet Points:** Copyable ATS-optimized bullet points for Power BI Developer, Data Analyst, and BI Engineer roles.
+- **STAR Methodology Case Studies:** Structured Situation, Task, Action, and Result narratives for technical interviews.
+- **2-Minute Executive Interview Script:** Comprehensive verbal script ready for hiring managers and technical screening rounds.
+- **DAX & LOD Measure Code Library:** Complete copyable formula repository.
 
 ---
 
 ## 🗄️ Relational Star Schema Model
 
-The data architecture adheres to dimensional modeling best practices, centered around a high-performance **Star Schema**:
+The data architecture adheres strictly to dimensional modeling best practices (Ralph Kimball methodology):
 
 ```
-                  ┌──────────────────────┐
-                  │      Dim_Date        │
-                  │  (DateKey, Year,     │
-                  │   Quarter, Month)    │
-                  └──────────┬───────────┘
-                             │ 1
-                             │
-                             │ *
-┌──────────────────┐  *  ┌───┴───────────────────┐  *  ┌──────────────────┐
-│   Dim_Customer   ├─────┤      Fact_Sales       ├─────┤   Dim_Product    │
-│ (Customer_ID,    │ 1   │ (Order_ID, DateKey,   │ 1   │ (Product_ID,     │
-│  Name, Segment,  │     │  CustKey, ProdKey,    │     │  Name, Category, │
-│  Gender, Age)    │     │  Sales, Profit, Qty,  │     │  Sub-Category,   │
-└──────────────────┘     │  Discount, ShipMode)  │     │  Base Cost)      │
-                         └───┬───────────────────┘     └──────────────────┘
-                             │ *
-                             │
-                             │ 1
-                  ┌──────────┴───────────┐
-                  │    Dim_Geography     │
-                  │ (GeoKey, City,       │
-                  │  State, Region, Zip) │
-                  └──────────────────────┘
+                               ┌────────────────────────────────┐
+                               │            Dim_Date            │
+                               ├────────────────────────────────┤
+                               │ PK  DateKey (YYYYMMDD)         │
+                               │     Full_Date (Date)           │
+                               │     Year (Int)                 │
+                               │     Quarter (VarChar)          │
+                               │     Month_Name (VarChar)       │
+                               │     Month_Number (Int)         │
+                               │     Day_Of_Week (VarChar)      │
+                               │     Is_Weekend (Boolean)       │
+                               └───────────────┬────────────────┘
+                                               │ 1
+                                               │
+                                               │ *
+┌───────────────────────────────┐  *   ┌───────┴────────────────────────┐   *   ┌───────────────────────────────┐
+│         Dim_Customer          ├──────┤           Fact_Sales           ├───────┤          Dim_Product          │
+├───────────────────────────────┤ 1    ├────────────────────────────────┤ 1     ├───────────────────────────────┤
+│ PK  Customer_ID (VarChar)     │      │ PK  Order_ID (VarChar)         │       │ PK  Product_ID (VarChar)      │
+│     Customer_Name (VarChar)   │      │ FK  DateKey (Int)              │       │     Product_Name (VarChar)    │
+│     Segment (VarChar)         │      │ FK  Customer_ID (VarChar)      │       │     Category (VarChar)        │
+│     Age (Int)                 │      │ FK  Product_ID (VarChar)       │       │     Sub_Category (VarChar)    │
+│     Gender (VarChar)          │      │ FK  Geo_ID (VarChar)           │       │     Unit_Cost (Decimal)       │
+│     Customer_Since (Date)     │      │     Sales_Amount (Decimal)     │       │     Unit_Price (Decimal)      │
+└───────────────────────────────┘      │     Order_Quantity (Int)       │       └───────────────────────────────┘
+                                       │     Discount_Rate (Decimal)    │
+                                       │     Profit_Amount (Decimal)    │
+                                       │     Shipping_Days (Int)        │
+                                       │     Ship_Mode (VarChar)        │
+                                       │     Payment_Mode (VarChar)     │
+                                       │     Order_Status (VarChar)     │
+                                       └───────┬────────────────────────┘
+                                               │ *
+                                               │
+                                               │ 1
+                               ┌───────────────┴────────────────┐
+                               │         Dim_Geography          │
+                               ├────────────────────────────────┤
+                               │ PK  Geo_ID (VarChar)           │
+                               │     City (VarChar)             │
+                               │     State (VarChar)            │
+                               │     Region (VarChar)           │
+                               │     Postal_Code (VarChar)      │
+                               │     Country (VarChar)          │
+                               └────────────────────────────────┘
 ```
 
 ---
 
-## 🧮 Selected DAX & Calculation Formulas
+## 🧮 Enterprise DAX Measure Catalog
 
-Here are key DAX measures formulated for this analytics suite:
+Below is a selection of core DAX business calculations formulated for this enterprise solution:
 
 ```dax
--- 1. Total Invoiced Sales
-Total Sales = SUM(Fact_Sales[Sales])
+-- 1. Total Invoiced Revenue
+Total Sales = 
+SUM(Fact_Sales[Sales_Amount])
 
--- 2. Blended Profit Margin %
-Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0) * 100
+-- 2. Total Net Profit
+Total Profit = 
+SUM(Fact_Sales[Profit_Amount])
 
--- 3. Year-over-Year (YoY) Sales Growth %
+-- 3. Blended Profit Margin Percentage
+Profit Margin % = 
+DIVIDE([Total Profit], [Total Sales], 0) * 100
+
+-- 4. Year-over-Year (YoY) Sales Growth Rate
 Sales YoY Growth % = 
 VAR CurrentSales = [Total Sales]
-VAR PriorYearSales = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Dim_Date[Date]))
+VAR PriorYearSales = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Dim_Date[Full_Date]))
 RETURN
-    DIVIDE(CurrentSales - PriorYearSales, PriorYearSales, 0) * 100
+    IF(
+        ISBLANK(PriorYearSales),
+        BLANK(),
+        DIVIDE(CurrentSales - PriorYearSales, PriorYearSales, 0) * 100
+    )
 
--- 4. Customer Lifetime Value (CLV)
-Average CLV = DIVIDE([Total Sales], [Total Customers], 0)
+-- 5. Year-to-Date (YTD) Revenue
+Sales YTD = 
+TOTALYTD([Total Sales], Dim_Date[Full_Date])
 
--- 5. Sales Variance vs Target Quota
-Sales Target Variance = [Total Sales] - SUM(Fact_Targets[Target_Sales])
+-- 6. Average Order Value (AOV)
+Average Order Value = 
+DIVIDE([Total Sales], DISTINCTCOUNT(Fact_Sales[Order_ID]), 0)
+
+-- 7. Customer Lifetime Value (CLV)
+Average CLV = 
+DIVIDE([Total Sales], DISTINCTCOUNT(Fact_Sales[Customer_ID]), 0)
+
+-- 8. Target Quota Variance
+Sales Quota Variance $ = 
+[Total Sales] - SUM(Fact_Targets[Target_Amount])
+
+-- 9. Quota Attainment Percentage
+Sales Quota Attainment % = 
+DIVIDE([Total Sales], SUM(Fact_Targets[Target_Amount]), 0) * 100
+
+-- 10. Discount Bleeder Financial Impact
+Unprofitable Discount Volume $ = 
+CALCULATE(
+    [Total Sales],
+    Fact_Sales[Discount_Rate] >= 0.25,
+    Fact_Sales[Profit_Amount] < 0
+)
 ```
 
 ---
 
-## 🖥️ Interactive Dashboard Modules (8 Pages)
+## 🧹 6-Step ETL & Data Quality Pipeline
 
-1. **Executive Overview:** High-level KPI cards, 3-year revenue trajectories, category revenue split, top products, and recent orders ledger.
-2. **Sales Performance & Drill-Down:** Multi-tier drill-down from **Year $\to$ Quarter $\to$ Month $\to$ Day** with YoY and MoM growth comparisons.
-3. **Profitability & Margin Leaks:** Scatter analysis (Sales vs. Profit), discount elasticity curves, and high-volume/low-margin bleeder detection.
-4. **Customer Demographics & CLV:** Customer cohort analysis, gender and age demographic distributions, CSAT ratings, and Top 10 VIP accounts with 360° profile modals.
-5. **Product Portfolio Matrix:** Searchable SKU matrix with Average Selling Price (ASP), units sold, and conditional formatting margin heat-bars.
-6. **Geographical & Territory Map:** Geospatial clustering across 4 US regions, state rankings, and city-level sales breakdowns.
-7. **Operational Logistics & SLA:** Fulfillment status ratios, carrier transit turnaround times (SLA), delayed shipment audits, and payment tender methods.
-8. **Target vs. Actual Variance:** Monthly budget quota adherence, variance analysis, and achievement status flags.
+1. **Composite Key Deduplication:** Identified composite candidate key `Order_ID + Product_ID` and purged 120 duplicate transactional payloads created by legacy batch processing.
+2. **Median Demographic Imputation:** Imputed 150 missing customer age values using segment medians (*Consumer: 32 yrs, Corporate: 41 yrs, Home Office: 38 yrs*). Resolved 85 missing ZIP codes via state-city cross-reference.
+3. **String Sanitization & Proper Casing:** Trimmed leading/trailing whitespace and normalized inconsistent text casing across customer names and product categories.
+4. **ISO-8601 Date Standardization:** Converted ambiguous date formats (`MM/DD/YY`, `DD-MM-YYYY`) into ISO-8601 `YYYY-MM-DD` and generated full temporal dimension attributes.
+5. **Discount Bounding & Outlier Capping:** Replaced erroneous negative discount numbers with `0.00` and validated promotional thresholds.
+6. **Feature Engineering:** Calculated derived measures including Cost Basis ($), Profit Margin (%), Shipping SLA Days, and On-Time Delivery Flags.
 
 ---
 
-## 💡 Key Business Insights & Strategic Recommendations
+## 💡 Strategic Executive Recommendations
 
-1. **Enforce a 20% Promotional Discount Ceiling:** Orders discounted $\ge 30\%$ generated an average profit margin of **-4.2%**, destroying **$142,000** in gross margin. Capping discounts preserves margin without reducing volume.
-2. **Optimize Heavy Furniture Logistics:** Furniture sub-categories (Tables, Bookcases) yield low margins (8.4%) due to high freight costs. Shifting to localized drop-shipping reduces shipping lead time and return rates.
-3. **VIP Customer Retention Tier:** The top 10 accounts contribute $280K+ in annual volume. Implementing a dedicated B2B loyalty program will expand repeat order frequency by an estimated 15%.
-4. **Carrier SLA Consolidation in Central/South:** Central and South territories experience a 14% delay rate. Re-negotiating regional carrier SLAs will reduce customer attrition.
+1. **Implement 20% Hard Ceiling on Promotional Discounts:** Transactions discounted $\ge 30\%$ generated an average profit margin of **-4.2%**, draining **$142,000+** in gross profit. Capping discounts protects margins without depressing unit volume.
+2. **Restructure Heavy Furniture Freight Operations:** Furniture items (Tables, Bookcases) yield low margins (8.4%) due to high freight overhead. Transitioning to regional drop-shipping reduces shipping lead times and return rates.
+3. **Establish VIP Corporate Loyalty Tier:** The top 10 enterprise accounts account for $280K+ in annual volume. Implementing dedicated account reps and SLA guarantees will increase repeat order velocity by an estimated 15%.
+4. **Carrier SLA Re-negotiation in Central and South:** Central and Southern territories experience a 14% late delivery rate. Consolidating volume with top-tier carriers will improve CSAT and lower cancellations.
 
 ---
 
-## 💼 Resume-Ready Bullet Points
+## 💼 Resume & Interview Kit
 
-- **Senior Data Analyst / Power BI & Tableau Focus:**
-  *Architected an end-to-end Enterprise Sales & Performance Analytics platform analyzing 10,250+ multi-year transactions across 4 US regions; engineered a Star Schema data model and 25+ dynamic DAX/LOD measures that identified $142K in margin leakages from excessive discounting, enabling leadership to optimize product mix and increase blended gross margin by 3.8%.*
+### 🎯 Resume Bullet Points
+
+- **Senior Power BI & Tableau Developer:**
+  > *Architected an enterprise Sales & Performance Analytics platform analyzing 10,250+ multi-year transactions across 4 US regions; engineered a Star Schema dimensional model and 25+ dynamic DAX/LOD measures that identified $142K in margin leakages from excessive discounting, enabling leadership to optimize product mix and increase blended gross margin by 3.8%.*
 
 - **Business Intelligence & Data Pipeline Engineer:**
-  *Developed comprehensive BI dashboards in Power BI and Tableau featuring hierarchical drill-downs (Year-to-Day), customer cohort retention tracking, and geospatial clustering; automated ETL data cleansing workflows that purged 120 duplicate transactions and resolved 235 missing records to achieve 99.8% data quality integrity.*
+  > *Engineered automated ETL data cleansing workflows that purged duplicate transactions, imputed missing demographic attributes, and standardized 10K+ records with 99.8% data integrity; built interactive Power BI and Tableau dashboards featuring 4-tier hierarchical drill-downs (Year-to-Day) and geospatial territory clustering.*
+
+### 🎙️ 2-Minute Executive Interview Script
+
+> *"In this project, I developed an enterprise Sales and Performance Analytics Dashboard for a multi-regional enterprise generating over $2.7M in revenue across 10,250 transactions. While top-line revenue was expanding, commercial leadership lacked clear visibility into where margin erosion was occurring.*
+> 
+> *I built an automated ETL pipeline to resolve data quality issues, established a Star Schema data model, and created over 25 DAX measures for Time Intelligence, quota attainment, and cohort analysis.*
+> 
+> *Through the Sales vs. Profit scatter matrix and discount elasticity analysis, I discovered that transactions with discounts over 30% were generating negative profit margins (-4.2%), resulting in over $142,000 in margin loss. I presented 4 executive recommendations: capping discounts at 20%, optimizing regional carrier SLAs, and creating a VIP corporate loyalty tier. This provides leadership with a real-time decision tool to safeguard profitability."*
 
 ---
 
-## 🎙️ 2-Minute Executive Interview Script
+## 🚀 Running the Project Locally
 
-> *"In this project, I built an end-to-end Sales and Performance Analytics Dashboard for a multi-regional enterprise generating over $2.7M in revenue across 10,250 transactions. While top-line revenue was growing, management lacked visibility into where margin erosion was taking place.*
-> 
-> *I built an automated ETL pipeline that cleaned duplicate and missing records, established a Star Schema data model, and created over 25 DAX measures for Time Intelligence and variance tracking.*
-> 
-> *Through the Sales vs. Profit scatter matrix and discount elasticity analysis, I discovered that transactions with discounts over 30% were generating negative profit margins (-4.2%), causing over $142,000 in margin loss. I presented 4 executive recommendations: capping discounts at 20%, optimizing regional carrier SLAs, and creating a VIP corporate loyalty tier. This provides leadership with a real-time decision tool to safeguard profitability."*
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation Steps
+```bash
+# 1. Clone or extract the repository
+git clone <repo-url>
+cd vantage-analytics
+
+# 2. Install dependencies
+npm install
+
+# 3. Start development server
+npm run dev
+
+# 4. Build for production
+npm run build
+```
+
+---
+
+## 📜 License & Attribution
+
+- **Project:** Vantage Analytics Enterprise Business Intelligence Suite
+- **Author & Lead Developer:** **Pramod Mahajan**
+- **Copyright:** © 2024–2026 Vantage Business Intelligence. All rights reserved.
