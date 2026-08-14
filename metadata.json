@@ -1,0 +1,6 @@
+{
+  "name": "Business Sales & Performance Analytics Dashboard",
+  "description": "An end-to-end business sales and performance analytics dashboard featuring Power BI, Tableau, and Excel workflows, DAX metrics, interactive drill-downs, and automated business insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
