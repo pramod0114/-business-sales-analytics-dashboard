@@ -42,7 +42,7 @@ const DashboardContent: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            <Sidebar />
+            <Sidebar onSelect={() => setMobileSidebarOpen(false)} />
           </div>
         </div>
       )}

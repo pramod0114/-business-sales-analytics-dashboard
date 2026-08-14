@@ -19,9 +19,10 @@ import {
 interface SidebarProps {
   collapsed?: boolean;
   onToggleCollapse?: () => void;
+  onSelect?: () => void;
 }
 
-export const Sidebar: React.FC<SidebarProps> = () => {
+export const Sidebar: React.FC<SidebarProps> = ({ onSelect }) => {
   const { activePage, setActivePage, filteredRecords, filters } = useData();
 
   const navItems: { id: DashboardPageId; label: string; icon: React.ReactNode; badge?: string }[] = [
@@ -84,7 +85,10 @@ export const Sidebar: React.FC<SidebarProps> = () => {
               <button
                 key={item.id}
                 id={`sidebar-nav-${item.id}`}
-                onClick={() => setActivePage(item.id)}
+                onClick={() => {
+                  setActivePage(item.id);
+                  onSelect?.();
+                }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all cursor-pointer group ${
                   isActive
                     ? 'bg-[#151a2d] text-white border border-blue-500/30 shadow-md shadow-blue-950/40'
